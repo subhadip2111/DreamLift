@@ -6,10 +6,10 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const navigation = [
+const navigation = [    
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
-  { name: "Career Paths", href: "/career-paths" },
+  { name: "Exam", href: "/exam" },
   { name: "Explore Careers", href: "/explore-careers" },
   { name: "Resources", href: "/resources" },
   { name: "Success Stories", href: "/success-stories" },

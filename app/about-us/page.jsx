@@ -1,18 +1,20 @@
-const links = [
-  { name: 'Open roles', href: '#' },
-  { name: 'Internship program', href: '#' },
-  { name: 'Our values', href: '#' },
-  { name: 'Meet our leadership', href: '#' },
-]
-const stats = [
-  { name: 'Offices worldwide', value: '12' },
-  { name: 'Full-time colleagues', value: '300+' },
-  { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off', value: 'Unlimited' },
-]
+
 export default function page() {
+  const links = [
+    { name: 'Open roles', href: '#' },
+    { name: 'Internship program', href: '#' },
+    { name: 'Our values', href: '#' },
+    { name: 'Our Mission', href: '/about-us/mission' },
+    { name: 'Meet our leadership', href: '#' },
+  ]
+  const stats = [
+    { name: 'Offices worldwide', value: '12' },
+    { name: 'Full-time colleagues', value: '300+' },
+    { name: 'Hours per week', value: '40' },
+    { name: 'Paid time off', value: 'Unlimited' },
+  ]
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32  h-[650px] ">
       <img
         alt=""
         src="https://images.unsplash.com/photo-1510146758428-e5e4b17b8b6a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -52,7 +54,7 @@ export default function page() {
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-            {links.map((link) => (
+            {links?.map((link) => (
               <a key={link.name} href={link.href}>
                 {link.name} <span aria-hidden="true">&rarr;</span>
               </a>
