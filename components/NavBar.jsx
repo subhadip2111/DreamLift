@@ -9,13 +9,13 @@ import Link from "next/link";
 const navigation = [    
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
-  { name: "Exam", href: "/exam" },
+  { name: "Exams", href: "/exams" },
   { name: "Explore Careers", href: "/explore-careers" },
   { name: "Resources", href: "/resources" },
   { name: "Success Stories", href: "/success-stories" },
   { name: "Blog & Articles", href: "/blog-articles" },
   { name: "FAQ", href: "/faq" },
-  { name: "Contact Us", href: "/contact-us" },
+  { name: "Contact Us", href: "/contact-us" },  
 ];
 
 export default function Navbar() {
@@ -53,22 +53,23 @@ export default function Navbar() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link href="/login" className="text-xl font-semibold leading-8 text-yellow-300">
+            <Link href="/login" className="text-xl font-semibold leading-8  w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
               Log in <span aria-hidden="true">&rarr;</span>
             </Link>
+
+
+{/* <button className="w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+  Button
+</button> */}
           </div>
         </nav>
         <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
           <div className="fixed inset-0 z-50" />
-          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-800 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-yellow-400 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-yellow-400/10">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt="Your Company Logo"
-                />
+           
               </Link>
               <button
                 type="button"
