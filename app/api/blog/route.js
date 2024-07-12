@@ -21,7 +21,7 @@ export async function GET(request) {
 
 export async function POST(request) {
   const data = await request.formData();
-
+    
   const timeStamp = Date.now();
   const image = data.get("image");
   const imageToBytes = await image.arrayBuffer();

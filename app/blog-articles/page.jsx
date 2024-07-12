@@ -10,8 +10,9 @@ const Page = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   async function fetchBlogs() {
+  
     try {
-      const res = await axios.get(`http://localhost:3000/api/blog`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`);
       if (res.data) {
         setBlogs(res.data.data);
       }

@@ -24,7 +24,7 @@ import SearchBar from '../../components/SearchBar';
 import Filter from './components/Filter';
 import FilterButton from '../../components/FilterButtonComponents';
 import FilterModal from '../../components/FilterModel';
-import FilterExamCard from '../../components/aboutUs/FilterExamCard';
+import FilterExamCard from '../../components/FilterExamCard';
 
 
 const exams = [
@@ -52,60 +52,7 @@ const FormSchema = z.object({
 });
 const Exam = () => {
 
-  const dummyExams = [
-    {
-      id: "1",
-      name: "SAT",
-      level: "High School",
-      date: "August 28, 2024",
-      registrationDeadline: "July 30, 2024",
-      eligibility: "High school students",
-      opportunities: "Admission to top US colleges",
-      subjects: ["Math", "Reading", "Writing"],
-      format: "Multiple Choice",
-      officialWebsite: "https://www.collegeboard.org",
-      importantNotes: "Bring a valid ID and admission ticket."
-    },
-    {
-      id: "1",
-      name: "SAT",
-      level: "High School",
-      date: "August 28, 2024",
-      registrationDeadline: "July 30, 2024",
-      eligibility: "High school students",
-      opportunities: "Admission to top US colleges",
-      subjects: ["Math", "Reading", "Writing"],
-      format: "Multiple Choice",
-      officialWebsite: "https://www.collegeboard.org",
-      importantNotes: "Bring a valid ID and admission ticket."
-    },
-    {
-      id: "1",
-      name: "SAT",
-      level: "High School",
-      date: "August 28, 2024",
-      registrationDeadline: "July 30, 2024",
-      eligibility: "High school students",
-      opportunities: "Admission to top US colleges",
-      subjects: ["Math", "Reading", "Writing"],
-      format: "Multiple Choice",
-      officialWebsite: "https://www.collegeboard.org",
-      importantNotes: "Bring a valid ID and admission ticket."
-    },
-    {
-      id: "1",
-      name: "SAT",
-      level: "High School",
-      date: "August 28, 2024",
-      registrationDeadline: "July 30, 2024",
-      eligibility: "High school students",
-      opportunities: "Admission to top US colleges",
-      subjects: ["Math", "Reading", "Writing"],
-      format: "Multiple Choice",
-      officialWebsite: "https://www.collegeboard.org",
-      importantNotes: "Bring a valid ID and admission ticket."
-    },
-  ];
+
 
 const [onClicked,setOnClicked]=useState(false)
 const [showModal, setShowModal] = useState(false);
@@ -123,13 +70,6 @@ const handleCloseModal = () => {
     <>
    <SearchBar/>
   
-<div className='flex flex-wrap gap-12 mt-4 ml-20  overflow-hidden'>
-
-{dummyExams?.map((exam, index) => (
-        <FilterExamCard key={index} exam={exam} />
-      ))}
-
-</div>
 
 
 

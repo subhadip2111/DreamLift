@@ -19,7 +19,7 @@ console.log(params.blogId);
 
   const fetchBlog = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/blog/${blogId}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}api/blog/${blogId}`);
       if (res.data) {
         setBlog(res.data.data);
       }
