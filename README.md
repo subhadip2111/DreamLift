@@ -1,63 +1,57 @@
 # WhatNext
+WhatNext is a web application designed to assist students in identifying their future career goals, selecting appropriate educational paths, and connecting with relevant educational resources and guidance.
 
-## Overview
+# Overview
+In every student's life, one of the most critical challenges is determining their future goals and finding the right educational path to achieve them. WhatNext aims to solve this problem by providing a comprehensive platform where students can:
 
-**WhatNext** is a web application designed to assist students in navigating their educational journey and career path. It addresses the common challenge many students face: determining their future goals and finding the right educational opportunities and guidance.
+# Explore a curated list of exams that align with their interests and career aspirations.
+Gain awareness of educational opportunities offered by various colleges and institutions.
+Connect with teachers and mentors who can provide personalized guidance and support.
+Features
+Exam Listings
+WhatNext provides a detailed listing of exams across different educational levels and fields such as Engineering, Medical, Teaching, and more. Each exam listing includes:
 
-## Message
+ # Exam name
+Level (e.g., 10th grade, 12th grade, Graduate)
+Eligibility criteria
+Subjects covered
+Exam format and syllabus details
+Duration of the exam
+Official website link for more information
+Description highlighting the benefits and opportunities associated with each exam
+Important dates related to the exam (application deadlines, exam dates, result dates)
+College and Opportunity Awareness
+Students can discover information about various colleges, institutions, and career opportunities available based on their exam results and educational background. This section provides insights into:
 
-In every student's life, there comes a pivotal moment when they must decide on their future educational path. **WhatNext** aims to provide clarity and direction during this critical phase by offering comprehensive insights and resources.
+# Top colleges offering programs related to specific exams
+Career opportunities available after completing specific exams or courses
+Scholarships, internships, and other educational resources
+Teacher and Mentor Connection
+To support students in making informed decisions about their educational and career paths, WhatNext allows them to connect with qualified teachers and mentors in their locality. Features include:
 
-## Problem Statement
+# Search functionality to find teachers based on subject expertise, location, and availability
+Profiles of teachers and mentors with detailed information about their qualifications, teaching experience, and areas of expertise
+Contact options to schedule consultations or guidance sessions
+Tech Stack
+WhatNext is built using modern technologies to ensure scalability, performance, and a seamless user experience:
 
-Whether it's choosing the right stream after 10th grade or identifying suitable career options post-high school, students often lack comprehensive guidance and information.
+# Frontend: Next.js, React
+Styling: Tailwind CSS
+Backend and Database: MongoDB for data storage and management
+Deployment: Deployed on cloud platforms like AWS or Heroku for reliability and accessibility
+Getting Started
+To run WhatNext locally or deploy it to a production environment, follow these steps:
 
-## Solution
+# Clone the repository from GitHub.
+Install dependencies using npm or yarn.
+Set up MongoDB and configure the connection string.
+Run the application using npm run dev or yarn dev.
+Access the application through your browser at http://localhost:3000.
+Contributing
+Contributions to WhatNext are welcome! If you have suggestions for new features, improvements to existing features, or bug fixes, please open an issue or submit a pull request on GitHub.
 
-**WhatNext** aims to bridge this gap by providing a centralized platform where students can:
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-- Explore a comprehensive list of exams and educational opportunities tailored to their interests and qualifications.
-- Discover insights into various career paths, helping them make informed decisions about their future.
-- Find teachers and mentors nearby who can provide personalized guidance and support.
-
-## Key Features
-
-- **Exam Directory**: Access a curated list of exams ranging from entrance tests for colleges to competitive exams for specialized fields.
-- **Opportunity Listings**: Explore opportunities such as scholarships, internships, and job placements linked to specific exams and educational paths.
-- **Teacher Locator**: Locate and connect with teachers and mentors in their vicinity who can offer career counseling and academic support.
-- **Personalized Recommendations**: Receive personalized recommendations based on their academic background, interests, and career aspirations.
-
-## MVP (Minimum Viable Product) - Phase 1
-
-The initial phase of **WhatNext** focuses on:
-
-- Creating a user-friendly interface for students to easily navigate and explore exam listings and opportunities.
-- Implementing a search feature to find nearby teachers based on location and subject expertise.
-- Providing detailed information about each exam, including eligibility criteria, exam dates, and related resources.
-
-## Technologies Used
-
-- **Frontend**: Next.js, React.js, Tailwind CSS
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB
-- **Additional Tools**: Google Maps API (for teacher locator feature)
-
-## Getting Started
-
-To run the application locally:
-
-1. Clone this repository.
-2. Install dependencies using `npm install`.
-3. Start the development server using `npm start`.
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions, feature requests, or bug reports, please submit them via GitHub issues.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
-## Contact
-
-For inquiries or further information, please contact [Your Name] at [Your Email Address].
+# Contact
+For questions, feedback, or support regarding WhatNext, please contact [Your Name] at [Your Email Address].
