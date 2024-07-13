@@ -3,10 +3,10 @@ import React from 'react';
 
 const FilterExamCard = ({ exam }) => {
   return (
-    <div className=" w-96   p-4 flex flex-col rounded-xl bg-dark-100 bg-clip-border text-gray-700 shadow-md overflow-hidden relative">
+    <div className=" w-96 m-2   group px-10 py-5 bg-black rounded-lg flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#c07d47] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500  cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&_p]:delay-200 [&_p]:transition-all overflow-hidden ">
       <div className="px-6 py-8 ">
         <div className=" w-8 h-8 mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"></div>
-        <div className="text-xl font-bold py-4 text-gray-200">
+        <div className="cardtxt font-semibold text-white tracking-wider group-hover:text-gray-700 text-xl">
           {exam.name}
         </div>
         <div className="text-gray-300 uppercase tracking-widest text-sm">
@@ -16,7 +16,7 @@ const FilterExamCard = ({ exam }) => {
           <p className="font-bold">Last Date to Apply: {exam.registrationDeadline}</p>
           <p className="mt-2">Eligibility: {exam.eligibility}</p>
           <p className="mt-2">Subjects: {exam.subjects.join(', ')}</p>
-          <p className="mt-2">Format: {exam.format}</p>
+          <p className="mt-2 ">Format: {exam.format}</p>
           <p className="mt-2">Important Notes: {exam.importantNotes}</p>
           <p className="mt-2">Official Website: 
             <Link href={exam.officialWebsite}  className="text-blue-400 hover:underline ml-1">

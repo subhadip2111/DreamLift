@@ -4,6 +4,8 @@ import Link from 'next/link';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import {Skeleton} from "@nextui-org/skeleton";
+import Loader from '@/components/Loader';
+import Image from 'next/image';
 const page = ({params}) => {
  
   const  blogId =params.blogId
@@ -19,7 +21,7 @@ console.log(params.blogId);
 
   const fetchBlog = async () => {
     try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}api/blog/${blogId}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${blogId}`);
       if (res.data) {
         setBlog(res.data.data);
       }
@@ -29,7 +31,7 @@ console.log(params.blogId);
   };
 
 if(!blog){
-  return <Skeleton/>
+  return <Loader/>
 }
 
   return (
@@ -50,7 +52,7 @@ if(!blog){
         <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Digital</button>
         <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Identity</button>
       </div>
-      <img class="sm:h-[34rem] mt-10 w-full object-contain" src= {blog?.image}alt="Featured Image" />
+      <Image class="sm:h-[34rem] mt-10 w-full object-contain" src= {blog?.image}alt="Featured Image" />
     </header>
     <div class="mx-auto mt-10 max-w-screen-md space-y-12 px-4 py-10 font-serif text-lg tracking-wide text-gray-700">
       <strong class="text-2xl font-medium">

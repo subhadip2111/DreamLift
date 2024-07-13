@@ -1,6 +1,7 @@
 
 "use client"
 
+import Loader from '@/components/Loader';
 import axios from 'axios'
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
@@ -27,27 +28,70 @@ async function getExam(){
 useEffect(()=>{
     getExam()
 },[examId])
+
+if(!exam){
+  return <Loader/>
+}
   return (
    <>
-  <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center p-6">
-      <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-3xl">
-        <h1 className="text-3xl font-bold mb-4">{exam?.name}</h1>
-        <p className="text-gray-400 mb-2"><strong>Level:</strong> {exam?.level}</p>
-        <p className="text-gray-400 mb-2"><strong>Last Date to Apply:</strong> {exam?.registrationDeadline}</p>
-        <p className="text-gray-400 mb-2"><strong>Eligibility:</strong> {exam?.eligibility}</p>
-        <p className="text-gray-400 mb-2"><strong>Subjects:</strong> {exam?.subjects.join(', ')}</p>
-        <p className="text-gray-400 mb-2"><strong>Format:</strong> {exam?.format}</p>
-        <p className="text-gray-400 mb-2"><strong>Important Notes:</strong> {exam?.importantNotes}</p>
-        <p className="text-gray-400 mb-2"><strong>Official Website:</strong>
-          {/* <Link href={exam?.officialWebsite} target="_blank" rel="noopener noreferrer">
-            <a className="text-blue-400 hover:underline ml-1">{exam?.officialWebsite}</a>
-          </Link> */}
-        </p>
-        {/* <Link href="/exams">
-          <a className="inline-block mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg shadow hover:bg-blue-600 transition">
-            Back to Exams
-          </a>
-        </Link>  */}
+     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex justify-center items-center py-12">
+      <div className="max-w-2xl w-full bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
+        <div className="p-6">
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">{exam.name}</h1>
+          <div className="text-sm text-gray-500 dark:text-gray-400 mb-8">
+            <p><strong>Level:</strong> {exam.level}</p>
+            <p><strong>Last Date to Apply:</strong> {new Date(exam.lastDate).toLocaleDateString()}</p>
+            <p><strong>Registration Deadline:</strong> {new Date(exam.registrationDeadline).toLocaleDateString()}</p>
+            <p><strong>Eligibility:</strong> {exam.eligibility}</p>
+          </div>
+          <hr className="border-gray-300 dark:border-gray-600 my-4" />
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Subjects</h2>
+            <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
+              {exam.subjects.map((subject, index) => (
+                <li key={index}>{subject}</li>
+              ))}
+            </ul>
+          </div>
+          <hr className="border-gray-300 dark:border-gray-600 my-4" />
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Format</h2>
+            <p className="text-gray-600 dark:text-gray-400">{exam.format}</p>
+          </div>
+          <hr className="border-gray-300 dark:border-gray-600 my-4" />
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Opportunities</h2>
+            {exam.opportunities.map((opportunity, index) => (
+              <div key={index} className="mb-4">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{opportunity.type}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{opportunity.description}</p>
+                {opportunity.benefits && (
+                  <p className="text-gray-500 dark:text-gray-500"><strong>Benefits:</strong> {opportunity.benefits}</p>
+                )}
+              </div>
+            ))}
+          </div>
+          <hr className="border-gray-300 dark:border-gray-600 my-4" />
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Important Notes</h2>
+            <p className="text-gray-600 dark:text-gray-400">{exam.importantNotes}</p>
+          </div>
+          <hr className="border-gray-300 dark:border-gray-600 my-4" />
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Description</h2>
+            <p className="text-gray-600 dark:text-gray-400">{exam.description}</p>
+          </div>
+          <div className="mt-8">
+            <a
+              href={exam.officialWebsite}
+              className="w-full px-4 py-3 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-400 dark:focus:ring-blue-800 block text-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Official Website
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     </>
@@ -56,89 +100,28 @@ useEffect(()=>{
 
 
 export default page
+
 /**
- * import React from "react";
-
-const Blog = () => {
-  return (
-    <>
-      <section className="bg-white pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
-        <div className="container">
-          <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4">
-              <div className="mx-auto mb-[60px] max-w-[510px] text-center lg:mb-20">
-                <span className="mb-2 block text-lg font-semibold text-primary">
-                  Our Blogs
-                </span>
-                <h2 className="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px]">
-                  Our Recent News
-                </h2>
-                <p className="text-base text-body-color dark:text-dark-6">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="-mx-4 flex flex-wrap">
-            <BlogCard
-              date="Dec 22, 2023"
-              CardTitle="Meet AutoManage, the best AI management tools"
-              CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              image="https://i.ibb.co/Cnwd4q6/image-01.jpg"
-            />
-            <BlogCard
-              date="Dec 22, 2023"
-              CardTitle="Meet AutoManage, the best AI management tools"
-              CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              image="https://i.ibb.co/Y23YC07/image-02.jpg"
-            />
-            <BlogCard
-              date="Dec 22, 2023"
-              CardTitle="Meet AutoManage, the best AI management tools"
-              CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-              image="https://i.ibb.co/7jdcnwn/image-03.jpg"
-            />
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
-
-export default Blog;
-
-const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
-  return (
-    <>
-      <div className="w-full px-4 md:w-1/2 lg:w-1/3">
-        <div className="mb-10 w-full">
-          <div className="mb-8 overflow-hidden rounded">
-            <img src={image} alt="" className="w-full" />
-          </div>
-          <div>
-            {date && (
-              <span className="mb-5 inline-block rounded bg-primary px-4 py-1 text-center text-xs font-semibold leading-loose text-white">
-                {date}
-              </span>
-            )}
-            <h3>
-              <a
-                href="/#"
-                className="mb-4 inline-block text-xl font-semibold text-dark hover:text-primary dark:text-white sm:text-2xl lg:text-xl xl:text-2xl"
-              >
-                {CardTitle}
-              </a>
-            </h3>
-            <p className="text-base text-body-color dark:text-dark-6">
-              {CardDescription}
-            </p>
-          </div>
-        </div>
+ * <main>
+  <article>
+    <header class="mx-auto max-w-screen-xl pt-28 text-center">
+      <p class="text-gray-500">Published April 4, 2022</p>
+      <h1 class="mt-2 text-3xl font-bold text-gray-900 sm:text-5xl">{blog.title}</h1>
+      <p class="mt-6 text-lg text-gray-700">You're doing marketing the wrong way</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-2" aria-label="Tags">
+        <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">{blog.tags}</button>
+        <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Branding</button>
+        <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Digital</button>
+        <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Identity</button>
       </div>
-    </>
-  );
-};
-
+      <img class="sm:h-[34rem] mt-10 w-full object-contain" src= {blog?.image}alt="Featured Image" />
+    </header>
+    <div class="mx-auto mt-10 max-w-screen-md space-y-12 px-4 py-10 font-serif text-lg tracking-wide text-gray-700">
+      <strong class="text-2xl font-medium">
+        </strong>
+      
+      <p>{blog?.description}</p>
+    </div>
+  </article>
+</main>
  */

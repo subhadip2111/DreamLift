@@ -12,7 +12,7 @@ const navigation = [
   { name: "Exams", href: "/exams" },
   { name: "Explore Careers", href: "/explore-careers" },
   { name: "Resources", href: "/resources" },
-  { name: "Success Stories", href: "/success-stories" },
+  { name: "Find Teachers", href: "/teacher" },
   { name: "Blog & Articles", href: "/blog-articles" },
   { name: "FAQ", href: "/faq" },
   { name: "Contact Us", href: "/contact-us" },  
@@ -53,7 +53,7 @@ export default function Navbar() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link href="/login" className="text-xl font-semibold leading-8  w-[150px] bg-black h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-[#009b49] before:to-[rgb(105,184,141)] before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-[#fff]">
+            <Link href="/login" className="text-xl hover:brightness-110 hover:animate-pulse font-bold py-3 px-6 rounded-full bg-indigo-500 shadow-lg shadow-indigo-500/50 text-white">
               Log in <span aria-hidden="true">&rarr;</span>
             </Link>
 

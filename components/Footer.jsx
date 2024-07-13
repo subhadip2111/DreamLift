@@ -32,9 +32,9 @@ export default function Footer() {
                 <p className="font-semibold text-gray-800 dark:text-white">Industries</p>
 
                 <div className="flex flex-col items-start mt-5 space-y-2">
-                    <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">Retail & E-Commerce</p>
+                    <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">Education </p>
                     <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">Information Technology</p>
-                    <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">Finance & Insurance</p>
+                    <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">Modern arts and Science</p>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@ export default function Footer() {
                 <img src="https://www.svgrepo.com/show/22048/dribbble.svg" className="" width="30" height="30" alt="db" />
             </div>
         </div>
-        <p className="font-sans p-8 text-start md:text-center md:text-lg md:p-4">© 2024 You Company Inc. All rights reserved.</p>
+        <p className="font-sans p-8 text-start md:text-center md:text-lg md:p-4">© 2024 WhatsNext Inc. All rights reserved.</p>
     </div>
 </footer>
      </>
