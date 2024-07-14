@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import {Skeleton} from "@nextui-org/skeleton";
 import Loader from '@/components/Loader';
 import Image from 'next/image';
-const page = ({params}) => {
+const Page = ({params}) => {
  
   const  blogId =params.blogId
   const [blog,setBlog] = useState(null);
@@ -17,7 +17,7 @@ console.log(params.blogId);
     if (blogId) {
       fetchBlog();
     }
-  }, [blogId]);
+  },[]);
 
   const fetchBlog = async () => {
     try {
@@ -45,7 +45,7 @@ if(!blog){
     <header class="mx-auto max-w-screen-xl pt-28 text-center">
       <p class="text-gray-500">Published April 4, 2022</p>
       <h1 class="mt-2 text-3xl font-bold text-gray-900 sm:text-5xl">{blog.title}</h1>
-      <p class="mt-6 text-lg text-gray-700">You're doing marketing the wrong way</p>
+      <p class="mt-6 text-lg text-gray-700">You doing marketing the wrong way</p>
       <div class="mt-6 flex flex-wrap justify-center gap-2" aria-label="Tags">
         <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">{blog.tags}</button>
         <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Branding</button>
@@ -67,6 +67,6 @@ if(!blog){
   )
 }
 
-export default page
+export default Page
 
 

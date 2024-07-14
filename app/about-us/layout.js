@@ -1,5 +1,5 @@
 export default function AboutUsLayout({
-    children, // will be a page or nested layout
+    children, // will be a Page or nested layout
   }) {
     return (
       <section>

@@ -6,7 +6,7 @@
 // // import Link from 'next/link';
 // // import React, { useEffect, useState } from 'react'
 
-// // const page = ({params}) => {
+// // const Page = ({params}) => {
 // //     const examId=params.examId
 // // const [exam,setExam]=useState(null)
 // // async function getExam(){
@@ -99,7 +99,7 @@
 // // };
 
 
-// // export default page
+// // export default Page
 
 
 // "use client";
@@ -266,7 +266,7 @@ export default function Page({ params }) {
 
   useEffect(() => {
     getExam();
-  }, [examId]);
+  }, []);
 
   console.log(exam);
 

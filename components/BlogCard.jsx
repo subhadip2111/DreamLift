@@ -1,11 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const BlogCard = ({ blog }) => {
   return (
     <div className="m-2 group px-10 py-5 bg-dark rounded-lg flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#eaec5c] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&_p]:delay-200 [&_p]:transition-all">
       <Link href={`/blog-articles/${blog._id}`}>
-        <img
+        <Image
+        height={300}
+        width={300}
           src={blog?.image}
           alt={blog.title}
           className="w-44 card1img aspect-square text-[#abd373] group-hover:bg-gray-800 text-5xl rounded-full p-2 transition-all duration-300 group-hover:transition-all group-hover:duration-300 group-hover:-translate-y-2 mx-auto"

@@ -204,7 +204,7 @@ export async function GET(request) {
         ];
       }
       const limit = dto.limit || 10; // Default limit to 10 if not provided from frontend side (optional)
-      const skip = dto.page_token ? (parseInt(dto.page_token) - 1) * limit : 0; // Calculate the skip value based on page_token
+      const skip = dto.Page_token ? (parseInt(dto.Page_token) - 1) * limit : 0; // Calculate the skip value based on Page_token
 
       const threads = await this.threadsModel
         .find(query)

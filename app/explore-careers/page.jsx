@@ -2,7 +2,7 @@ import CareerPaths from '@/components/CarrierPathcomponents'
 import FrameComponent from '@/components/FramerComponents'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <>
 <CareerPaths/>
@@ -10,4 +10,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -18,7 +18,7 @@ const Intro = () => {
                     Think Big, Get Big. Think Small, Get Small.
                 </h1>
                 <p className="mt-6 text-lg leading-8  ">
-                    Your mindset shapes your reality. If you dream big and take bold steps, the possibilities are limitless. However, if you confine yourself to small thoughts and actions, you'll remain within the bounds of those limitations. Embrace the power of thinking big, and watch as your world expands in ways you never thought possible. Your potential is only as great as the size of your vision.
+                    Your mindset shapes your reality. If you dream big and take bold steps, the possibilities are limitless. However, if you confine yourself to small thoughts and actions, you will remain within the bounds of those limitations. Embrace the power of thinking big, and watch as your world expands in ways you never thought possible. Your potential is only as great as the size of your vision.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                     <Link
