@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import FilterExamCard from "./FilterExamCard";
@@ -8,12 +8,12 @@ import { degreeSubjects } from "@/utils/data";
 import { useDebounce } from "@/utils/validation";
 import NoDataFound from "./NotFound";
 const SearchBar = () => {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const debouncedKeyword = useDebounce(search, 500);
   const [showModal, setShowModal] = useState(false);
   const [examList, setExamList] = useState(null);
-  const [selectedDegree, setSelectedDegree] = useState('');
-  const [selectedSubject, setSelectedSubject] = useState('');
+  const [selectedDegree, setSelectedDegree] = useState("");
+  const [selectedSubject, setSelectedSubject] = useState("");
   const [subjects, setSubjects] = useState(degreeSubjects);
   const [isLoading, setIsLoading] = useState(false);
   const limit = 10;
@@ -21,9 +21,9 @@ const SearchBar = () => {
 
   // Function to clear all filters and reset state
   const clearFilters = () => {
-    setSearch('');
-    setSelectedDegree('');
-    setSelectedSubject('');
+    setSearch("");
+    setSelectedDegree("");
+    setSelectedSubject("");
     setSubjects([]);
     setExamList(null);
   };
@@ -33,36 +33,39 @@ const SearchBar = () => {
     setIsLoading(true);
     try {
       const params = { limit, offset };
-  if(debouncedKeyword){
-params.keyword=debouncedKeyword
-  }
+      if (debouncedKeyword) {
+        params.keyword = debouncedKeyword;
+      }
       // Optionally add selectedDegree if it exists
       if (selectedDegree) {
         params.degree = selectedDegree;
       }
-  
+
       // Optionally add selectedSubject if it exists
       if (selectedSubject) {
         params.subject = selectedSubject;
       }
-  
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/exam`, {
-        params,
-      });
-  
+
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/exam`,
+        {
+          params,
+        }
+      );
+
       if (res.data.data) {
         setExamList(res.data.data);
       } else {
         setExamList([]);
       }
     } catch (error) {
-      console.error('Error fetching exam data:', error);
+      console.error("Error fetching exam data:", error);
       setExamList([]);
     } finally {
       setIsLoading(false);
     }
   }
-  
+
   // Effect to fetch exam data when search keyword changes
   useEffect(() => {
     getExam();
@@ -89,7 +92,7 @@ params.keyword=debouncedKeyword
   const handleSubmit = (e) => {
     e.preventDefault();
     getExam();
-    setShowModal(false)
+    setShowModal(false);
   };
 
   // Function to handle search input change
@@ -108,7 +111,10 @@ params.keyword=debouncedKeyword
       <div className="w-full flex flex-col items-center py-4 bg-[#071111]">
         <div className="flex w-full max-w-[1030px] px-4 items-center ">
           <form className="flex-grow" onSubmit={handleSubmit}>
-            <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white" htmlFor="default-search">
+            <label
+              className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              htmlFor="default-search"
+            >
               Search
             </label>
             <div className="relative">
@@ -166,7 +172,13 @@ params.keyword=debouncedKeyword
             className="relative cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-[4px] bg-black rounded-[16px] bg-gradient-to-t from-[#212121] to-[#212121] active:scale-95 ml-4"
           >
             <div className="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
-              <Image src="/filter.png" height={40} width={40} alt="Filter Icon" className=" rounded-lg" />
+              <Image
+                src="/filter.png"
+                height={40}
+                width={40}
+                alt="Filter Icon"
+                className=" rounded-lg"
+              />
             </div>
             <div className="absolute right-5 transform translate-x-full opacity-0 text-white text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"></div>
           </button>
@@ -175,7 +187,10 @@ params.keyword=debouncedKeyword
         {/* Modal for filters */}
         {showModal && (
           <div className="fixed inset-0 flex justify-end z-50">
-            <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setShowModal(false)}></div>
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50"
+              onClick={() => setShowModal(false)}
+            ></div>
             <div className="relative w-96 h-full bg-yellow-100 shadow-lg">
               <button
                 onClick={() => setShowModal(false)}
@@ -189,13 +204,19 @@ params.keyword=debouncedKeyword
                   stroke="currentColor"
                   className="w-6 h-6"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
               <div className="p-4">
                 <h2 className="text-lg font-semibold mb-4">Filter Exams</h2>
                 <div>
-                  <label className="block mb-2 text-sm font-medium text-gray-700">Select Your Degree</label>
+                  <label className="block mb-2 text-sm font-medium text-gray-700">
+                    Select Your Degree
+                  </label>
                   <select
                     value={selectedDegree}
                     onChange={handleDegreeChange}
@@ -210,7 +231,9 @@ params.keyword=debouncedKeyword
                   </select>
                 </div>
                 <div className="mt-4">
-                  <label className="block mb-2 text-sm font-medium text-gray-700">Subject</label>
+                  <label className="block mb-2 text-sm font-medium text-gray-700">
+                    Subject
+                  </label>
                   <select
                     value={selectedSubject}
                     onChange={handleSubjectChange}
@@ -233,13 +256,13 @@ params.keyword=debouncedKeyword
                     Clear Filters
                   </button>
                   <button
-//                   //  onClick={handleSubmit}
- // Apply Filters button
-onClick={handleSubmit}
-                  className="w-1/2 p-2 inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-[#7747FF] hover:bg-white hover:text-[#7747FF] focus:text-[#7747FF] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200"
-                >
-                  Apply Filters
-                </button>
+                    //                   //  onClick={handleSubmit}
+                    // Apply Filters button
+                    onClick={handleSubmit}
+                    className="w-1/2 p-2 inline-block py-2 px-6 rounded-l-xl rounded-t-xl bg-[#7747FF] hover:bg-white hover:text-[#7747FF] focus:text-[#7747FF] focus:bg-gray-200 text-gray-50 font-bold leading-loose transition duration-200"
+                  >
+                    Apply Filters
+                  </button>
                   {/* Any other buttons or actions */}
                 </div>
               </div>
@@ -249,18 +272,18 @@ onClick={handleSubmit}
       </div>
 
       {examList !== null ? (
-  examList.length > 0 ? (
-      <div className="flex flex-wrap gap-12 mt-4 ml-20  ">
-      {examList.map((exam, index) => (
-        <FilterExamCard key={index} exam={exam} />
-      ))}
-    </div>
-  ) : (
-    <NoDataFound/>
-  )
-) : (
-  <Loader />
-)}
+        examList.length > 0 ? (
+          <div className="flex flex-wrap gap-12 mt-4 ml-20  ">
+            {examList.map((exam, index) => (
+              <FilterExamCard key={index} exam={exam} />
+            ))}
+          </div>
+        ) : (
+          <NoDataFound />
+        )
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };

@@ -52,7 +52,7 @@ if(!blog){
         <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Digital</button>
         <button class="rounded-lg bg-gray-100 px-2 py-1 font-medium text-gray-600 hover:bg-gray-200">Identity</button>
       </div>
-      <Image class="sm:h-[34rem] mt-10 w-full object-contain" src= {blog?.image}alt="Featured Image" />
+      <Image className="sm:h-[34rem] mt-10 w-full object-contain"  height={400} width={500} src= {blog?.image}alt="Featured Image" />
     </header>
     <div class="mx-auto mt-10 max-w-screen-md space-y-12 px-4 py-10 font-serif text-lg tracking-wide text-gray-700">
       <strong class="text-2xl font-medium">
