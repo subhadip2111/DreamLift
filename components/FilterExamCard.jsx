@@ -3,7 +3,7 @@ import React from 'react';
 
 const FilterExamCard = ({ exam }) => {
   return (
-    <div className=" w-96 h-[500px]  m-2   group px-10 py-5 bg-black rounded-xl flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#f7a65a] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500  cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&_p]:delay-200 [&_p]:transition-all overflow-hidden ">
+    <div className=" w-96 h-[500px]  m-2   group px-10 py-5 bg-black rounded-xl flex flex-col items-center justify-center gap-2 relative after:absolute after:h-full after:bg-[#857e77] z-20 shadow-lg after:-z-20 after:w-full after:inset-0 after:rounded-lg transition-all duration-300 hover:transition-all hover:duration-300 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500  cursor-pointer after:-translate-y-full after:hover:translate-y-0 [&_p]:delay-200 [&_p]:transition-all overflow-hidden ">
       <div className="px-6 py-8 ">
         <div className=" w-8 h-8 mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased"></div>
         <div className="cardtxt font-semibold text-white tracking-wider group-hover:text-gray-700 text-xl">
