@@ -2,28 +2,19 @@
 
 ## Project Overview
 
-WhatNext is a web application designed to assist students in determining their future goals and finding suitable educational paths. By listing exams, colleges, and career opportunities, WhatNext provides students with the information needed to make informed decisions about their education and career.
+WhatNext is a web application designed to help students determine their future goals and find suitable educational paths. The application lists exams, colleges, and career opportunities, providing students with the information they need to make informed decisions about their education and career.
 
 ## Objective
 
-The primary objective of WhatNext is to help students navigate their educational and career choices by:
+The main objective of WhatNext is to assist students in navigating their educational and career choices by:
 - Displaying a list of exams based on the student's last academic qualification.
 - Providing detailed information about each exam, including eligibility, syllabus, important dates, and more.
 - Highlighting potential career paths based on user input.
 - Showcasing opportunities and colleges for various fields such as Engineering, Medical, Teaching, etc.
 - Emphasizing the importance of skills, patience, and continuous improvement over single exam results.
-- Introducing students to the best teachers around their location based on desired exams.
-- Creating a learning system for upcoming young teachers to learn exam patterns and syllabi, fostering the profession of good teachers.
-- Developing a resilient mindset in students, making them aware of multiple opportunities and upskilling them to think and live like top-tier institution graduates (e.g., IITians).
-
-## Problem Statement
-
-Many students face significant stress and pressure related to their exam results, often believing that a single failure can determine their entire future. This project aims to:
-- Break the notion that one exam result defines a student's future.
-- Provide alternative pathways to prestigious institutions like IITs and NITs.
-- Ensure students are aware of various exams and opportunities available to them.
-- Foster a mindset of resilience and continuous learning, enabling students to achieve their goals through multiple avenues.
-- Empower young teachers with resources to become excellent educators, thereby improving the overall educational ecosystem.
+- Making students aware of alternative ways to achieve their goals, such as joining top colleges like IITs and NITs even if they fail initially.
+- Developing a resilient mindset in students, making them aware of multiple opportunities and upskilling them to think and live like graduates of top-tier institutions (e.g., IITians).
+- Encouraging part-time teaching for financial stability while pursuing long-term goals.
 
 ## Key Features
 
@@ -36,9 +27,11 @@ Many students face significant stress and pressure related to their exam results
 - **Student-Friendly UI/UX**: Modern and intuitive interface designed for a great user experience.
 
 ### MVP 2
-- **Teacher Finder**: Find the best teachers around the student's location based on desired exams.
-- **Teacher Learning System**: A platform for upcoming young teachers to learn exam patterns and syllabi.
-- **Resilient Mindset Development**: Emphasize multiple pathways to success and continuous upskilling to foster a mindset of resilience and adaptability.
+- **Teacher Finder**: Students can find the best teachers around their location based on the desired exam.
+- **Learning System for Teachers**: A system for upcoming young teachers to learn the exam pattern and syllabus, fostering the profession of good teachers.
+- **Alternative Paths Awareness**: Making students aware of alternative ways to achieve their goals, such as joining top colleges like IITs and NITs even if they fail initially.
+- **Resilient Mindset Development**: Developing a resilient mindset in students, making them aware of multiple opportunities and upskilling them to think and live like graduates of top-tier institutions (e.g., IITians).
+- **Part-time Income for Graduates**: Encouraging students who are preparing for government jobs to consider part-time teaching to earn money, ensuring financial stability while pursuing long-term goals.
 
 ## Tech Stack
 
@@ -59,9 +52,9 @@ Many students face significant stress and pressure related to their exam results
 ├── components
 │ ├── CareerPath.jsx
 │ ├── ExamDetails.jsx
-│ ├── Blog.jsx
 │ ├── TeacherFinder.jsx
-│ ├── TeacherLearningSystem.jsx
+│ ├── LearningSystem.jsx
+│ └── Blog.jsx
 ├── pages
 │ ├── index.js
 │ ├── about
@@ -71,8 +64,9 @@ Many students face significant stress and pressure related to their exam results
 │ │ ├── [id].jsx
 │ │ └── index.js
 │ ├── teachers
-│ │ ├── finder.jsx
-│ │ └── learning.jsx
+│ │ └── index.js
+│ ├── learning
+│ │ └── index.js
 │ └── blog
 │ ├── index.js
 │ └── [id].jsx
@@ -91,7 +85,7 @@ Copy code
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/whatnext.git
+   git clone https://github.com/subhadip2111/DreamLift.git
    cd whatnext
 Install dependencies:
 
@@ -115,13 +109,14 @@ GET /api/exams/
 : Get detailed information about a specific exam by ID.
 Opportunities
 GET /api/opportunities: Get a list of opportunities based on the user's input.
-Teachers
-GET /api/teachers/finder: Find the best teachers around the user's location based on the desired exam.
-GET /api/teachers/learning: Access learning resources for upcoming young teachers to learn exam patterns and syllabi.
 Blog
 GET /api/blogs: Get a list of blog posts.
 GET /api/blogs/
 : Get detailed information about a specific blog post by ID.
+Teachers
+GET /api/teachers: Find the best teachers around the user's location based on the desired exam.
+Learning System
+GET /api/learning: Access resources for upcoming young teachers to learn the exam pattern and syllabus.
 Contributing
 Fork the repository.
 Create a new branch for your feature or bug fix:
@@ -141,5 +136,4 @@ License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
-For any questions or inquiries, please contact [your email address].
-
+For any questions or inquiries, please contact [subhadipshee20010521@gmail.com].
