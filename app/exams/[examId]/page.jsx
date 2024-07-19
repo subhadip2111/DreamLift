@@ -253,7 +253,7 @@ export default function Page({ params }) {
   async function getExam() {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/exam/${examId}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/exams/${examId}`
       );
       if (response.data) {
         setExam(response.data.data);
@@ -263,7 +263,7 @@ export default function Page({ params }) {
       console.error("Error fetching exam:", error);
     }
   }
-
+console.log(exam);
   useEffect(() => {
     getExam();
   }, [examId]);
