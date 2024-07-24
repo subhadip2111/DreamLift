@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 import TeacherCard from '@/components/teacherCard';
 import Loader from '@/components/Loader';
+import { teachersData } from '@/utils/data';
 
 // Custom debounce function
 const debounce = (func, wait) => {
@@ -17,10 +18,10 @@ const debounce = (func, wait) => {
   };
 };
 
+
 const TeacherSearchBar = () => {
   const [teachers, setTeachers] = useState([]);
   const [input, setInput] = useState('');
-
   const fetchTeachers = async (keyword = null, limit = 10, offset = 0) => {
     try {
       const params = { limit, offset };
@@ -32,6 +33,9 @@ const TeacherSearchBar = () => {
       console.error("Error fetching teachers: ", error);
     }
   };
+
+
+
 
   // Debounced version of fetchTeachers
   const debouncedFetchTeachers = useCallback(debounce(fetchTeachers, 300), []);
