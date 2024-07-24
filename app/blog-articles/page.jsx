@@ -13,7 +13,7 @@ const Page = () => {
   async function fetchBlogs() {
   
     try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/blog`);
       if (res.data) {
         setBlogs(res.data.data);
       }

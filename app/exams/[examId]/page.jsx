@@ -17,7 +17,7 @@ export default function Page({ params }) {
   async function getExam() {
     try {
       const response = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/exams/${examId}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/exams/${examId}`
       );
       if (response.data) {
         setExam(response.data.data);

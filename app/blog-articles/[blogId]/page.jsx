@@ -21,7 +21,7 @@ console.log(params.blogId);
 
   const fetchBlog = async () => {
     try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/blog/${blogId}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${blogId}`);
       if (res.data) {
         setBlog(res.data.data);
       }
@@ -58,8 +58,11 @@ if(!blog){
       <strong class="text-2xl font-medium">
         </strong>
       
-      <p>{blog?.description}</p>
+      <p className='text-lg text-gray-700'>{blog?.description}</p>
+      <p className='bg-white px-2 py-1 font-medium text-black'>{blog?.content}</p>
+
     </div>
+
   </article>
 </main>
 

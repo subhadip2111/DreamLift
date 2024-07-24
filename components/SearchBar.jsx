@@ -47,7 +47,7 @@ const SearchBar = () => {
       }
 
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/exam`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/exam`,
         {
           params,
         }
